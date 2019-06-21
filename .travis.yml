@@ -1,20 +1,16 @@
-os: linux
-
-dist: xenial
-
 matrix:
   include:
-    - language: ruby
+    - os: linux
+      dist: xenial
+      language: ruby
       cache: bundler
       rvm: 
-        - 2.4.5
-        - 2.5.4
-        - 2.6.2
-    - language: shell
-      script: echo "Testing"
-
-script:
-  - ruby -v
-
-services:
-  - docker
+        - 2.4.0
+        - 2.5.0
+        - 2.6.0
+      script:
+        - ruby -v
+    - os: windows
+      language: shell
+      script:
+        - powershell -Command Write-Host Test
