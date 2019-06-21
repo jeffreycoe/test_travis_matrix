@@ -1,15 +1,15 @@
-os:
-  - linux
-  - windows
-
-dist: xenial
-language: ruby
-cache: bundler
-
-rvm:
-  - 2.4.5
-  - 2.5.4
-  - 2.6.2
+matrix:
+  include:
+    - language: ruby
+      os: linux
+      dist: xenial
+      cache: bundler
+      rvm: 
+        - 2.4.5
+        - 2.5.4
+        - 2.6.2
+    - language: shell
+      os: windows
 
 script:
   - ruby -v
